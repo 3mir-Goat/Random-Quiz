@@ -1,13 +1,8 @@
-// --------------------
-// SUPABASE CONFIG
-// --------------------
-const SUPABASE_URL = "https://yourprojectid.supabase.co"; // Replace with your URL
-const SUPABASE_KEY = "your_anon_public_key";              // Replace with your anon key
-const TABLE_NAME = "scores";                              // Your table name
 
-// --------------------
-// SEND SCORE FUNCTION
-// --------------------
+const SUPABASE_URL = "https://yourprojectid.supabase.co"; 
+const SUPABASE_KEY = "your_anon_public_key";              
+const TABLE_NAME = "scores";                              
+
 async function sendScore(name, score) {
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}`, {
@@ -26,9 +21,6 @@ async function sendScore(name, score) {
   }
 }
 
-// --------------------
-// 100 TRIVIA QUESTIONS
-// --------------------
 const allQuestions = [
   { question: "What is the capital of France?", options: ["Paris","Rome","Berlin","Madrid","London"], correct: "Paris" },
   { question: "Which planet is closest to the Sun?", options: ["Venus","Mars","Mercury","Earth","Jupiter"], correct: "Mercury" },
@@ -111,11 +103,7 @@ const allQuestions = [
 { question: "Which country is famous for maple syrup?", options: ["USA","Canada","Germany","France","Italy"], correct: "Canada" }
 ];
 
-// --------------------
-// HELPER FUNCTIONS
-// --------------------
 
-// Shuffle array
 function shuffleArray(array) {
   for (let i = array.length-1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i+1));
@@ -123,16 +111,14 @@ function shuffleArray(array) {
   }
 }
 
-// Pick 10 random questions from 100
+
 function pickRandomQuestions(allQuestions, num=10){
   const copy = [...allQuestions];
   shuffleArray(copy);
   return copy.slice(0, num);
 }
 
-// --------------------
-// RENDER QUESTIONS
-// --------------------
+-
 document.addEventListener("DOMContentLoaded", () => {
   const quizQuestions = pickRandomQuestions(allQuestions, 10);
   const form = document.getElementById("quizForm");
@@ -159,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.insertBefore(div, form.querySelector("button"));
   });
 
-  // Handle submit
+  
   form.addEventListener("submit", function(e){
     e.preventDefault();
     const name = document.getElementById("playerName").value || "Anonymous";
