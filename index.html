@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Trivia Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; }
+    h1 { text-align: center; }
+    .question { margin: 15px 0; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+    label { display: block; margin: 5px 0; }
+    button { padding: 10px 20px; font-size: 18px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Random Trivia Quiz</h1>
+
+  <form id="quizForm">
+    <label>
+      Your Name:
+      <input type="text" id="playerName" placeholder="Enter your name" required />
+    </label>
+    <!-- Questions will be injected here by JS -->
+    <button type="submit">Submit Quiz</button>
+  </form>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
