@@ -1,6 +1,6 @@
 
-const SUPABASE_URL = "https://yourprojectid.supabase.co"; 
-const SUPABASE_KEY = "your_anon_public_key";              
+const SUPABASE_URL = ""; 
+const SUPABASE_KEY = "";              
 const TABLE_NAME = "scores";                              
 
 async function sendScore(name, score) {
